@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blockly Тренажер для детей 5-8 лет</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Оверлей с кнопкой старта -->
+  <div id="startOverlay" class="overlay">
+    <h1>Добро пожаловать в Тренажер Blockly!</h1>
+    <p>Нажмите «Пуск», чтобы начать игру.</p>
+    <button id="startButton">Пуск</button>
+  </div>
+  
+  <!-- Основная игровая зона -->
+  <div class="container" id="gameContainer" style="display: none;">
+    <h2>Задание: Перетащи блоки, чтобы решить задачу!</h2>
+    <div id="blocklyDiv"></div>
+    <div id="output"></div>
+    <div id="gameArea">
+      <div id="character"></div>
+    </div>
+  </div>
+
+  <!-- Оверлей победы -->
+  <div id="victoryOverlay" class="overlay" style="display: none;">
+    <h1>Победа!</h1>
+    <img src="https://via.placeholder.com/300x200.png?text=Victory" alt="Победа!" id="victoryImage">
+    <button id="closeVictory">Закрыть</button>
+  </div>
+
+  <!-- Подключаем Blockly из CDN -->
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
