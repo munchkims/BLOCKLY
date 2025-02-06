@@ -1,39 +1,32 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blockly Тренажер для детей 5-8 лет</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <title>Blockly Hero Game</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Подключаем Blockly -->
+  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
 </head>
 <body>
-  <!-- Оверлей с кнопкой старта -->
-  <div id="startOverlay" class="overlay">
-    <h1>Добро пожаловать в Тренажер Blockly!</h1>
-    <p>Нажмите «Пуск», чтобы начать игру.</p>
-    <button id="startButton">Пуск</button>
-  </div>
-  
-  <!-- Основная игровая зона -->
-  <div class="container" id="gameContainer" style="display: none;">
-    <h2>Задание: Перетащи блоки, чтобы решить задачу!</h2>
-    <div id="blocklyDiv"></div>
-    <div id="output"></div>
-    <div id="gameArea">
-      <div id="character"></div>
+  <div class="container">
+    <!-- Левая колонка: описание задачи, рабочее пространство Blockly и кнопки -->
+    <div class="left-column">
+      <h2>Задача</h2>
+      <div id="taskDisplay" class="task-display"></div>
+      <h2>Блоки</h2>
+      <div id="blocklyDiv"></div>
+      <div class="buttons">
+        <button id="runButton">Проверить</button>
+        <button id="nextTaskButton">Следующая задача</button>
+      </div>
+    </div>
+    <!-- Правая колонка: игровое поле, где действует герой -->
+    <div class="right-column">
+      <h2>Герой в действии</h2>
+      <canvas id="gameCanvas" width="500" height="500"></canvas>
     </div>
   </div>
-
-  <!-- Оверлей победы -->
-  <div id="victoryOverlay" class="overlay" style="display: none;">
-    <h1>Победа!</h1>
-    <img src="https://via.placeholder.com/300x200.png?text=Victory" alt="Победа!" id="victoryImage">
-    <button id="closeVictory">Закрыть</button>
-  </div>
-
-  <!-- Подключаем Blockly из CDN -->
-  <script src="https://unpkg.com/blockly/blockly.min.js"></script>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
