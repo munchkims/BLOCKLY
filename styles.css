@@ -1,85 +1,319 @@
-/* style.css */
-
+/* Общий стиль */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f0f0;
+  font-family: 'Arial', sans-serif;
+  background: url('https://767416.selcdn.ru/production_kodland_main_public/task_description_materials/17a5f2d3-7e1c-41d4-acbe-086a61914593.png') no-repeat center center fixed; /* Фоновое изображение */
+  background-size: cover;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .container {
   display: flex;
-  flex-direction: row;
-  height: 100vh;
-  padding: 10px;
-}
-
-/* Левая колонка: задача, блоки и кнопки */
-.left-column {
-  flex: 1;
-  margin-right: 10px;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-}
-
-.task-display {
-  padding: 10px;
-  margin-bottom: 15px;
-  background-color: #e8f4ff;
-  border-left: 4px solid #2196F3;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-#blocklyDiv {
-  flex: 1;
-  height: 400px; /* фиксированная высота, можно менять */
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  width: 90%;
+  height: 90%;
+  background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон для контейнера */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
-.buttons {
-  margin-top: 10px;
-}
-
-button {
-  margin-right: 10px;
-  margin-top: 10px;
-  padding: 8px 12px;
-  border: none;
-  border-radius: 4px;
-  background-color: #2196F3;
-  color: #fff;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-button:hover {
-  background-color: #1976D2;
-}
-
-/* Правая колонка: игровое поле */
-.right-column {
-  flex: 1;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+.blocks-panel,
+.solution-panel,
+.result-panel {
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-#gameCanvas {
-  margin-top: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+/* Левая панель */
+.blocks-panel {
+  width: 20%;
+  background: #e3f2fd;
+  border-right: 1px solid #ccc;
+}
+
+.blocks-panel h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #444;
+}
+
+.block {
+  background: #bbdefb;
+  padding: 8px 12px; /* Увеличен размер блоков */
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: grab;
+  text-align: center;
+  font-size: 18px;
+  transition: background 0.3s;
+  position: relative;
+  border: 2px solid #444;
+  font-weight: bold; /* Добавляем жирный текст */
+}
+
+.block:hover {
+  background: #90caf9;
+}
+
+/* Центральная панель */
+.solution-panel {
+  width: 50%;
+  background: #ffffff;
+}
+
+#solution-area {
+  flex-grow: 1;
+  background: #f9f9f9;
+  border: 2px dashed #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0px; /* Уменьшено расстояние между блоками */
+  overflow-y: auto;
+  position: relative;
+}
+
+#solution-area p {
+  color: #aaa;
+  font-size: 14px; /* Уменьшен размер текста подсказки */
+}
+
+#solution-area .block {
+  background: #bbdefb;
+  padding: 6px 10px; /* Уменьшен размер блоков */
+  border-radius: 8px; /* Слегка скруглённые углы */
+  position: relative;
+  border: 2px solid #444;
+  font-size: 12px; /* Уменьшен размер текста внутри блоков */
+}
+
+#solution-area .block::after {
+  content: '×';
+  position: absolute;
+  top: 2px;
+  right: 6px;
+  font-size: 14px;
+  color: #e74c3c;
+  cursor: pointer;
+}
+
+#solution-area .block:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  bottom: -12px; /* Уменьшено расстояние между соединителями */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 10px; /* Уменьшена длина соединителей */
+  background: #444;
+}
+
+/* Кнопки */
+.styled-button {
+  padding: 10px 20px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+#reset-button {
+  background: #ff9800; /* Оранжевый фон */
+  color: white; /* Белый текст */
+}
+
+#reset-button:hover {
+  background: #e68a00; /* Темно-оранжевый при наведении */
+}
+
+.styled-button:hover {
+  background: #45a049;
+}
+
+.task-button {
+  background: #2196f3;
+}
+
+.task-button:hover {
+  background: #1e88e5;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.task-switcher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.task-switcher span {
+  font-size: 16px;
+  color: #555;
+}
+
+/* Правая панель */
+.result-panel {
+  width: 30%;
+  background: #ffebee;
+  border-left: 1px solid #ccc;
+}
+
+#game-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 80px); /* Увеличен размер ячеек */
+  grid-template-rows: repeat(4, 80px); /* Увеличен размер ячеек */
+  gap: 4px;
+}
+
+.cell {
+  width: 80px; /* Увеличен размер ячеек */
+  height: 80px; /* Увеличен размер ячеек */
+  background: #fff;
+  border: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px; /* Увеличен размер значков */
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.cell.hero {
+  background: none; /* Убираем фон */
+  position: relative; /* Позволяет размещать элементы внутри ячейки */
+}
+
+.cell.hero img {
+  width: 100%; /* Картинка занимает всю ячейку */
+  height: 100%;
+  object-fit: cover; /* Сохраняет пропорции изображения */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Герой всегда поверх других элементов */
+}
+
+/* Ячейка с кристаллом */
+.cell.crystal {
+  background: #ffeb3b; /* Жёлтый фон для кристалла */
+  position: relative;
+  z-index: 1; /* Кристаллы под героем */
+}
+
+.cell.crystal:before {
+  content: '💎'; /* Символ кристалла */
+  font-size: 30px;
+}
+
+/* Оверлей */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay.hidden {
+  display: none;
+}
+
+.overlay-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-content p {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+/* Стили для правильного решения */
+.overlay.success .overlay-content {
+  background: #d4edda; /* Зелёный фон */
+}
+
+.overlay.success #overlay-text {
+  color: #155724; /* Тёмно-зелёный текст */
+}
+
+/* Стили для неправильного решения */
+.overlay.failure .overlay-content {
+  background: #f8d7da; /* Красный фон */
+}
+
+.overlay.failure #overlay-text {
+  color: #721c24; /* Тёмно-красный текст */
+}
+
+/* Оверлей завершения игры */
+#completion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#completion-overlay.hidden {
+  display: none;
+}
+
+#completion-overlay .overlay-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#completion-overlay img {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+#completion-overlay p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+#completion-overlay #completion-time {
+  font-size: 20px;
+  color: #4caf50; /* Зелёный цвет для времени */
+  font-weight: bold;
 }
