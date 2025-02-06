@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Arial', sans-serif;
-  background: url('https://767416.selcdn.ru/production_kodland_main_public/task_description_materials/17a5f2d3-7e1c-41d4-acbe-086a61914593.png') no-repeat center center fixed; /* Фоновое изображение */
+  background: url('https://767416.selcdn.ru/production_kodland_main_public/task_description_materials/17a5f2d3-7e1c-41d4-acbe-086a61914593.png') no-repeat center center fixed;
   background-size: cover;
   color: #333;
   display: flex;
@@ -18,47 +18,39 @@ body {
 
 .container {
   display: flex;
-  width: 90%;
+  width: 95%; /* Увеличена ширина контейнера */
   height: 90%;
-  background: rgba(255, 255, 255, 0.9); /* Полупрозрачный фон для контейнера */
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }
 
-.blocks-panel,
-.solution-panel,
-.result-panel {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
 /* Левая панель */
 .blocks-panel {
-  width: 20%;
+  width: 15%; /* Уменьшена ширина левой панели */
   background: #e3f2fd;
   border-right: 1px solid #ccc;
+  padding: 15px; /* Уменьшен отступ */
 }
 
 .blocks-panel h2 {
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 10px;
+  font-size: 16px; /* Уменьшен размер текста */
   color: #444;
 }
 
 .block {
   background: #bbdefb;
-  padding: 8px 12px; /* Увеличен размер блоков */
-  margin-bottom: 10px;
-  border-radius: 10px;
+  padding: 8px 10px; /* Уменьшен размер блоков */
+  margin-bottom: 8px;
+  border-radius: 8px;
   cursor: grab;
   text-align: center;
-  font-size: 18px;
+  font-size: 14px; /* Уменьшен размер текста */
   transition: background 0.3s;
-  position: relative;
   border: 2px solid #444;
-  font-weight: bold; /* Добавляем жирный текст */
+  font-weight: bold;
 }
 
 .block:hover {
@@ -67,8 +59,9 @@ body {
 
 /* Центральная панель */
 .solution-panel {
-  width: 50%;
+  width: 45%; /* Уменьшена ширина центральной панели */
   background: #ffffff;
+  padding: 15px; /* Уменьшен отступ */
 }
 
 #solution-area {
@@ -77,28 +70,26 @@ body {
   border: 2px dashed #ccc;
   border-radius: 5px;
   padding: 10px;
-  min-height: 200px;
+  min-height: 300px;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  gap: 0px; /* Уменьшено расстояние между блоками */
+  gap: 0px;
   overflow-y: auto;
   position: relative;
 }
 
 #solution-area p {
   color: #aaa;
-  font-size: 14px; /* Уменьшен размер текста подсказки */
+  font-size: 12px; /* Уменьшен размер текста подсказки */
 }
 
 #solution-area .block {
   background: #bbdefb;
-  padding: 6px 10px; /* Уменьшен размер блоков */
-  border-radius: 8px; /* Слегка скруглённые углы */
-  position: relative;
-  border: 2px solid #444;
-  font-size: 12px; /* Уменьшен размер текста внутри блоков */
+  padding: 6px 8px; /* Уменьшен размер блоков */
+  border-radius: 6px;
+  font-size: 12px; /* Уменьшен размер текста */
 }
 
 #solution-area .block::after {
@@ -106,7 +97,7 @@ body {
   position: absolute;
   top: 2px;
   right: 6px;
-  font-size: 14px;
+  font-size: 12px; /* Уменьшен размер крестика */
   color: #e74c3c;
   cursor: pointer;
 }
@@ -114,33 +105,33 @@ body {
 #solution-area .block:not(:last-child)::before {
   content: '';
   position: absolute;
-  bottom: -12px; /* Уменьшено расстояние между соединителями */
+  bottom: -10px; /* Уменьшено расстояние между соединителями */
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  height: 10px; /* Уменьшена длина соединителей */
+  height: 8px; /* Уменьшена длина соединителей */
   background: #444;
 }
 
 /* Кнопки */
 .styled-button {
-  padding: 10px 20px;
+  padding: 8px 16px; /* Уменьшен размер кнопок */
   background: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px; /* Уменьшен размер текста */
   transition: background 0.3s;
 }
 
 #reset-button {
-  background: #ff9800; /* Оранжевый фон */
-  color: white; /* Белый текст */
+  background: #ff9800;
+  color: white;
 }
 
 #reset-button:hover {
-  background: #e68a00; /* Темно-оранжевый при наведении */
+  background: #e68a00;
 }
 
 .styled-button:hover {
@@ -158,73 +149,74 @@ body {
 .controls {
   display: flex;
   justify-content: space-between;
-  margin-top: 15px;
+  margin-top: 10px; /* Уменьшен отступ */
 }
 
 .task-switcher {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 10px; /* Уменьшен отступ */
 }
 
 .task-switcher span {
-  font-size: 16px;
+  font-size: 14px; /* Уменьшен размер текста */
   color: #555;
 }
 
 /* Правая панель */
 .result-panel {
-  width: 30%;
+  flex-grow: 1; /* Панель растягивается на оставшееся пространство */
   background: #ffebee;
   border-left: 1px solid #ccc;
+  padding: 15px; /* Уменьшен отступ */
+  display: flex;
+  flex-direction: column;
 }
 
 #game-grid {
   display: grid;
-  grid-template-columns: repeat(4, 80px); /* Увеличен размер ячеек */
-  grid-template-rows: repeat(4, 80px); /* Увеличен размер ячеек */
+  grid-template-columns: repeat(4, 1fr); /* Автоматическое изменение размера ячеек */
+  grid-template-rows: repeat(4, 1fr);
   gap: 4px;
+  flex-grow: 1; /* Сетка растягивается на всю высоту панели */
 }
 
 .cell {
-  width: 80px; /* Увеличен размер ячеек */
-  height: 80px; /* Увеличен размер ячеек */
   background: #fff;
   border: 1px solid #ddd;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 30px; /* Увеличен размер значков */
+  font-size: 24px; /* Уменьшен размер значков */
   border-radius: 5px;
   transition: background 0.3s;
 }
 
 .cell.hero {
-  background: none; /* Убираем фон */
-  position: relative; /* Позволяет размещать элементы внутри ячейки */
+  background: none;
+  position: relative;
 }
 
 .cell.hero img {
-  width: 100%; /* Картинка занимает всю ячейку */
+  width: 100%;
   height: 100%;
-  object-fit: cover; /* Сохраняет пропорции изображения */
+  object-fit: cover;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 2; /* Герой всегда поверх других элементов */
+  z-index: 2;
 }
 
-/* Ячейка с кристаллом */
 .cell.crystal {
-  background: #ffeb3b; /* Жёлтый фон для кристалла */
+  background: #ffeb3b;
   position: relative;
-  z-index: 1; /* Кристаллы под героем */
+  z-index: 1;
 }
 
 .cell.crystal:before {
-  content: '💎'; /* Символ кристалла */
-  font-size: 30px;
+  content: '💎';
+  font-size: 24px; /* Уменьшен размер кристалла */
 }
 
 /* Оверлей */
@@ -254,29 +246,11 @@ body {
 }
 
 .overlay-content p {
-  font-size: 24px;
+  font-size: 20px; /* Уменьшен размер текста */
   margin-bottom: 15px;
 }
 
-/* Стили для правильного решения */
-.overlay.success .overlay-content {
-  background: #d4edda; /* Зелёный фон */
-}
-
-.overlay.success #overlay-text {
-  color: #155724; /* Тёмно-зелёный текст */
-}
-
-/* Стили для неправильного решения */
-.overlay.failure .overlay-content {
-  background: #f8d7da; /* Красный фон */
-}
-
-.overlay.failure #overlay-text {
-  color: #721c24; /* Тёмно-красный текст */
-}
-
-/* Оверлей завершения игры */
+/* Стили для завершения игры */
 #completion-overlay {
   position: fixed;
   top: 0;
@@ -303,17 +277,17 @@ body {
 }
 
 #completion-overlay img {
-  max-width: 150px;
+  max-width: 120px; /* Уменьшен размер изображения */
   margin-bottom: 10px;
 }
 
 #completion-overlay p {
-  font-size: 18px;
+  font-size: 16px; /* Уменьшен размер текста */
   margin-bottom: 10px;
 }
 
 #completion-overlay #completion-time {
-  font-size: 20px;
-  color: #4caf50; /* Зелёный цвет для времени */
+  font-size: 18px; /* Уменьшен размер текста */
+  color: #4caf50;
   font-weight: bold;
 }
