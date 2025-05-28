@@ -11,34 +11,34 @@
     <!-- Левая панель: Блоки -->
     <div class="blocks-panel">
       <h2>Блоки</h2>
-      <div class="block draggable scratch-block" draggable="true" data-action="moveUp">⬆️ Вверх</div>
-      <div class="block draggable scratch-block" draggable="true" data-action="moveDown">⬇️ Вниз</div>
-      <div class="block draggable scratch-block" draggable="true" data-action="moveLeft">⬅️ Влево</div>
-      <div class="block draggable scratch-block" draggable="true" data-action="moveRight">➡️ Вправо</div>
-      <div class="block draggable scratch-block" draggable="true" data-action="collect">🫳Собрать</div>
+      <div class="block draggable scratch-block" draggable="true" data-action="moveUp">⬆️ Up</div>
+      <div class="block draggable scratch-block" draggable="true" data-action="moveDown">⬇️ Down</div>
+      <div class="block draggable scratch-block" draggable="true" data-action="moveLeft">⬅️ Left</div>
+      <div class="block draggable scratch-block" draggable="true" data-action="moveRight">➡️ Right</div>
+      <div class="block draggable scratch-block" draggable="true" data-action="collect">🫳Gather</div>
     </div>
 
     <!-- Центральная панель: Решение -->
     <div class="solution-panel">
-      <h2 id="task-title">Задача 1: Собери все кристаллы!</h2>
-      <div id="task-description">Герой должен собрать все кристаллы на поле.</div>
+      <h2 id="task-title">Task 1: Gather all crystals!</h2>
+      <div id="task-description">The hero must collect all the crystals on the field.</div>
       <div id="solution-area" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <p>Перетащите блоки сюда</p>
+        <p>Drag the blocks here</p>
       </div>
       <div class="controls">
-        <button id="reset-button" class="styled-button">Сначала</button>
-        <button id="run-button" class="styled-button">Выполнить</button>
+        <button id="reset-button" class="styled-button">Reset</button>
+        <button id="run-button" class="styled-button">Run</button>
       </div>
       <div class="task-switcher">
-        <button id="prev-task" class="styled-button task-button">← Предыдущая задача</button>
+        <button id="prev-task" class="styled-button task-button">← Previous Task</button>
         <span id="task-number">1 / 10</span>
-        <button id="next-task" class="styled-button task-button">Следующая задача →</button>
+        <button id="next-task" class="styled-button task-button">Next Task →</button>
       </div>
     </div>
 
     <!-- Правая панель: Результат -->
     <div class="result-panel">
-      <h2>Результат</h2>
+      <h2>Result</h2>
       <div id="game-grid"></div>
     </div>
 
@@ -46,15 +46,15 @@
     <div id="overlay" class="overlay hidden">
       <div class="overlay-content">
         <p id="overlay-text"></p>
-        <button id="close-overlay" class="styled-button">Продолжить</button>
+        <button id="close-overlay" class="styled-button">Continue</button>
       </div>
     </div>
     <div id="completion-overlay" class="overlay hidden">
   <div class="overlay-content">
-    <img id="completion-image" src="https://767416.selcdn.ru/production_kodland_main_public/task_description_materials/745798be-b789-442f-9e3c-63208b9cfb87.gif" alt="Поздравление!" />
-    <p id="completion-text">Поздравляем! Вы выполнили все задания!</p>
-    <p id="completion-time">Ваше время: <span id="total-time">00:00</span></p>
-    <button id="restart-game" class="styled-button">Начать заново</button>
+    <img id="completion-image" src="https://767416.selcdn.ru/production_kodland_main_public/task_description_materials/745798be-b789-442f-9e3c-63208b9cfb87.gif" alt="Congratulations!" />
+    <p id="completion-text">Congratulations! You've completed all the tasks!</p>
+    <p id="completion-time">Your Time: <span id="total-time">00:00</span></p>
+    <button id="restart-game" class="styled-button">Restart Game</button>
   </div>
 </div>
   </div>
