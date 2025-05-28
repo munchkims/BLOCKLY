@@ -28,16 +28,16 @@ let totalTime = 0; // Общее время игры
 
 // Задания
 const tasks = [
-  { title: 'Задача 1', description: 'Соберите 1 кристалл.', crystals: [{ x: 1, y: 1 }] },
-  { title: 'Задача 2', description: 'Соберите 2 кристалла.', crystals: [{ x: 1, y: 1 }, { x: 2, y: 2 }] },
-  { title: 'Задача 3', description: 'Соберите 1 кристалл.', crystals: [{ x: 3, y: 3 }] },
-  { title: 'Задача 4', description: 'Соберите 2 кристалла.', crystals: [{ x: 0, y: 3 }, { x: 3, y: 0 }] },
-  { title: 'Задача 5', description: 'Соберите 3 кристалла.', crystals: [{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }] },
-  { title: 'Задача 6', description: 'Соберите 2 кристалла.', crystals: [{ x: 0, y: 3 }, { x: 3, y: 3 }] },
-  { title: 'Задача 7', description: 'Соберите 3 кристалла.', crystals: [{ x: 0, y: 3 }, { x: 1, y: 1 }, { x: 2, y: 2 }] },
-  { title: 'Задача 8', description: 'Соберите 4 кристалла.', crystals: [{ x: 2, y: 0 }, { x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }] },
-  { title: 'Задача 9', description: 'Соберите 3 кристалла.', crystals: [{ x: 0, y: 3 }, { x: 1, y: 2 }, { x: 2, y: 1 }] },
-  { title: 'Задача 10', description: 'Соберите 4 кристалла.', crystals: [{ x: 1, y: 2 }, { x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }] },
+  { title: 'Task 1', description: 'Gather 1 crystal.', crystals: [{ x: 1, y: 1 }] },
+  { title: 'Task 2', description: 'Gather 2 crystals.', crystals: [{ x: 1, y: 1 }, { x: 2, y: 2 }] },
+  { title: 'Task 3', description: 'Gather 1 crystal.', crystals: [{ x: 3, y: 3 }] },
+  { title: 'Task 4', description: 'Gather 2 crystals.', crystals: [{ x: 0, y: 3 }, { x: 3, y: 0 }] },
+  { title: 'Task 5', description: 'Gather 3 crystals.', crystals: [{ x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }] },
+  { title: 'Task 6', description: 'Gather 2 crystals.', crystals: [{ x: 0, y: 3 }, { x: 3, y: 3 }] },
+  { title: 'Task 7', description: 'Gather 3 crystals.', crystals: [{ x: 0, y: 3 }, { x: 1, y: 1 }, { x: 2, y: 2 }] },
+  { title: 'Task 8', description: 'Gather 4 crystals.', crystals: [{ x: 2, y: 0 }, { x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }] },
+  { title: 'Task 9', description: 'Gather 3 crystals.', crystals: [{ x: 0, y: 3 }, { x: 1, y: 2 }, { x: 2, y: 1 }] },
+  { title: 'Task 10', description: 'Gather 4 crystals.', crystals: [{ x: 1, y: 2 }, { x: 1, y: 1 }, { x: 2, y: 2 }, { x: 3, y: 3 }] },
 ];
 
 // Функция для запуска таймера
@@ -156,7 +156,7 @@ runButton.addEventListener('click', () => {
 
     if (crystals.length === 0) {
       // Все кристаллы собраны
-      overlayText.textContent = 'Правильно!';
+      overlayText.textContent = 'Correct!';
       overlay.classList.add('success'); // Добавляем класс для правильного решения
       overlay.classList.remove('failure'); // Убираем класс для неправильного решения
       completedTasks++; // Увеличиваем счётчик выполненных заданий
@@ -174,7 +174,7 @@ runButton.addEventListener('click', () => {
       }, 2000); // Автоматическое переключение на следующее задание
     } else {
       // Не все кристаллы собраны
-      overlayText.textContent = 'Неправильно!';
+      overlayText.textContent = 'Incorrect!';
       overlay.classList.add('failure'); // Добавляем класс для неправильного решения
       overlay.classList.remove('success'); // Убираем класс для правильного решения
     }
